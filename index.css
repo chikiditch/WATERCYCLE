@@ -36,6 +36,7 @@ body {
   pointer-events: auto;
   max-width: 32rem;
   margin-bottom: 1rem;
+  color: black;
 }
 
 .header h1 {
