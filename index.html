@@ -1,13 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WaterCycle 3D App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Cycle 3D - Vanilla JS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  
+  <!-- Import map for completely framework-less static Three.JS -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- 3D Canvas -->
+  <div id="canvas-container"></div>
+  
+  <!-- Interactive Markers synced to 3D -->
+  <div id="hotspots-container"></div>
+
+  <!-- UI Overlay -->
+  <div id="ui-overlay">
+    <!-- Header -->
+    <header class="header">
+      <h1>The Water Cycle</h1>
+      <p>Explore the natural water cycle, the sources of "dirty water", and how they interact. Click the interactive markers to learn more.</p>
+    </header>
+
+    <!-- Legend -->
+    <div class="legend">
+      <div class="legend-item"><div class="dot bg-blue"></div> Natural Cycle</div>
+      <div class="legend-item"><div class="dot bg-red"></div> Biological</div>
+      <div class="legend-item"><div class="dot bg-orange"></div> Chemical</div>
+      <div class="legend-item"><div class="dot bg-lime"></div> Physical</div>
+      <div class="legend-item"><div class="dot bg-violet"></div> Interaction</div>
+    </div>
+
+    <!-- Detail Panel -->
+    <div id="detail-panel" class="hidden">
+      <div id="panel-color-bar"></div>
+      <div class="panel-content">
+        <div class="panel-header">
+          <span id="panel-category">CATEGORY</span>
+          <button id="close-btn" aria-label="Close">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <h2 id="panel-title">Title</h2>
+        <div id="panel-description">Description</div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
 </html>
 
