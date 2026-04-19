@@ -42,7 +42,8 @@ body {
   margin: 0;
   font-size: 2.25rem;
   font-weight: 700;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.699);
+  color: rgb(0, 183, 255);
 }
 
 .header p {
@@ -50,9 +51,9 @@ body {
   font-size: 0.875rem;
   opacity: 0.9;
   line-height: 1.4;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.699);
   font-weight: 500;
-  font-color: black;
+  color: black;
 }
 
 .legend {
